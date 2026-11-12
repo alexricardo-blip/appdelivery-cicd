@@ -5,7 +5,7 @@ VERSAO = "2.0"
 
 class AppDelivery(BaseHTTPRequestHandler):
     def do_GET(self):
-        mensagem = f"AppDelivery funcionando! Versao {VERSAO}"
+        mensagem = f"AppDelivery CI-CD AUTOMATICO! Versao {VERSAO}"
 
         self.send_response(200)
         self.send_header("Content-type", "text/plain; charset=utf-8")

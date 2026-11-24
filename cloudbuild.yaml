@@ -7,13 +7,13 @@ steps:
     args:
       - 'build'
       - '-t'
-      - 'europe-west4-docker.pkg.dev/$PROJECT_ID/appdelivery-repo/appdelivery:$BUILD_ID'
+      - 'europe-west1-docker.pkg.dev/$PROJECT_ID/appdelivery-repo/appdelivery:$BUILD_ID'
       - '.'
 
   - name: 'gcr.io/cloud-builders/docker'
     args:
       - 'push'
-      - 'europe-west4-docker.pkg.dev/$PROJECT_ID/appdelivery-repo/appdelivery:$BUILD_ID'
+      - 'europe-west1-docker.pkg.dev/$PROJECT_ID/appdelivery-repo/appdelivery:$BUILD_ID'
 
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:slim'
     entrypoint: 'gcloud'
@@ -22,9 +22,9 @@ steps:
       - 'deploy'
       - 'appdelivery'
       - '--image'
-      - 'europe-west4-docker.pkg.dev/$PROJECT_ID/appdelivery-repo/appdelivery:$BUILD_ID'
+      - 'europe-west1-docker.pkg.dev/$PROJECT_ID/appdelivery-repo/appdelivery:$BUILD_ID'
       - '--region'
-      - 'europe-west4'
+      - 'europe-west1'
       - '--no-traffic'
 
 options:
